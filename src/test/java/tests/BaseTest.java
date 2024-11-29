@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.BasePage;
 import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
@@ -21,7 +20,7 @@ public class BaseTest {
     public void setup() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-Maximized");
-        //options.addArguments("headless");
+        options.addArguments("headless");
         driver = new ChromeDriver(options);
 
         loginPage = new LoginPage(driver);
@@ -29,8 +28,8 @@ public class BaseTest {
         cartPage = new CartPage(driver);
     }
 
-   /* @AfterMethod
-    public void close () {
+    @AfterMethod
+    public void close() {
         driver.quit();
-    }*/
+    }
 }

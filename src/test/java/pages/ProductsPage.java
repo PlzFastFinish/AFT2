@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ProductsPage extends BasePage{
+public class ProductsPage extends BasePage {
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -18,20 +18,20 @@ public class ProductsPage extends BasePage{
         return driver.findElement(TITLE).getText();
     }
 
-    public void addToCart(String product){
+    public void addToCart(String product) {
         By addToCart = By.xpath(String.format(ADD_TO_CART_PATTERN, product));
         driver.findElement(addToCart).click();
     }
 
-    public String getEmptyLoginErrorMessage(){
+    public String getEmptyLoginErrorMessage() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-    public String getEmptyPasswordErrorMessage(){
+    public String getEmptyPasswordErrorMessage() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-    public String getLockedOutUserErrorMessage(){
+    public String getLockedOutUserErrorMessage() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 }
